@@ -58,13 +58,37 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                 </a>
             <?php endif; ?>
 
-            <!-- Logout -->
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <button id="logoutBtn"
-                    class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-md text-white font-semibold">
-                    Logout
-                </button>
-            <?php endif; ?>
+             <!-- Logout -->
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="relative">
+                        <form action="<?= site_url('logout'); ?>" method="post" id="logoutForm" class="flex justify-center sm:justify-end">
+                            <button type="button"
+                                id="logoutBtn"
+                                class="px-5 py-2 bg-red-600 rounded-md hover:bg-red-700 transition font-semibold text-white w-full sm:w-auto">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Logout Confirmation Modal -->
+                    <div id="logoutModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                        <div class="bg-[#2a2f3a] p-6 rounded-lg w-80">
+                            <h2 class="text-lg font-bold mb-4 text-center">Confirm Logout</h2>
+                            <p class="mb-6 text-center">Are you sure you want to logout?</p>
+                            <div class="flex justify-center gap-4">
+                                <button id="confirmLogoutBtn"
+                                    class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-md font-semibold">
+                                    Yes
+                                </button>
+                                <button id="cancelLogoutBtn"
+                                    class="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded-md font-semibold">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
         </div>
     </div>
 
