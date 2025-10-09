@@ -33,10 +33,10 @@ class UserController extends Controller {
 
         // Pagination Links
         $this->pagination->set_options([
-            'first_link' => '<span class="w-10 h-10 flex items-center justify-center text-white font-bold text-xl">⏮</span>',
-            'last_link'  => '<span class="w-10 h-10 flex items-center justify-center text-white font-bold text-xl">⏭</span>',
-            'next_link'  => '<span class="w-10 h-10 flex items-center justify-center text-white font-bold text-xl">→</span>',
-            'prev_link'  => '<span class="w-10 h-10 flex items-center justify-center text-white font-bold text-xl">←</span>',
+            'first_link' => '<span class="w-10 h-10 flex items-center justify-center text-black font-bold text-xl">⏮</span>',
+            'last_link'  => '<span class="w-10 h-10 flex items-center justify-center text-black font-bold text-xl">⏭</span>',
+            'next_link'  => '<span class="w-10 h-10 flex items-center justify-center text-black font-bold text-xl">→</span>',
+            'prev_link'  => '<span class="w-10 h-10 flex items-center justify-center text-black font-bold text-xl">←</span>',
             'page_delimiter' => '&page='
         ]);
         
